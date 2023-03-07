@@ -18,3 +18,23 @@ Network policies are specified by using three identifiers:
 - Other pods that are allowed
 - Namespaces that are allowed
 - IP blocks/ Ports
+## Instructions
+1. Clone the project 
+```
+git clone https://github.com/mehdijebali/K8s_App_Configuration_Lab.git
+```
+2. Apply manifest using **kubectl**
+```
+kubectl apply -f /path/to/manifest.yml
+```
+3. You can check the status of pods, services, deployments, and ingresses  with the following commands
+```
+kubecl get pods | grep <pod_name>
+kubectl get networkpolicy | grep <network_policy_name>
+```
+4. You can also list additional information of specifice pod,service, deployment, and ingress for any debugging issue
+```
+kubectl describe pod <pod_name>
+kubectl describe networkpolicy <network_policy_map_name>
+```
+The **<pod_name>, <network_policy_name>)** are the values of the key `metadata.name` in each k8s manifest yaml file.
